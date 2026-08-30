@@ -8,3 +8,4 @@ node_modules/
 .vinext/
 .wrangler/
 dist/
+.netlify/
