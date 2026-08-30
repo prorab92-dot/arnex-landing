@@ -1,0 +1,12 @@
+.git/
+arnex-site/
+arnex-site-package.tar.gz
+codex-hook-staging/
+ИМЯ-ПАПКИ/
+
+node_modules/
+.next/
+.vinext/
+.wrangler/
+dist/
+.netlify/
