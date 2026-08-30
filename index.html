@@ -20,7 +20,7 @@
         <p class="hero-text">
           Подберём понятный план работ, материалы и сроки, чтобы вы заранее видели бюджет ремонта.
         </p>
-        <a class="button" href="mailto:hello@arnex.ru">Оставить заявку</a>
+        <a class="button" href="#lead-form">Оставить заявку</a>
       </section>
 
       <section class="services" aria-labelledby="services-title">
@@ -45,11 +45,39 @@
           </article>
         </div>
       </section>
+
+      <section class="lead" aria-labelledby="lead-title">
+        <div>
+          <p class="eyebrow">Заявка</p>
+          <h2 id="lead-title">Оставьте контакты</h2>
+          <p>
+            Мы получим заявку в Telegram и свяжемся, чтобы уточнить площадь, состояние квартиры и желаемые сроки.
+          </p>
+        </div>
+
+        <form class="lead-form" id="lead-form">
+          <label>
+            Имя
+            <input name="name" type="text" placeholder="Как к вам обращаться" required>
+          </label>
+          <label>
+            Телефон
+            <input name="phone" type="tel" placeholder="+7 999 000-00-00" required>
+          </label>
+          <label>
+            Что нужно сделать
+            <textarea name="message" rows="4" placeholder="Например: двухкомнатная квартира, нужен ремонт под ключ"></textarea>
+          </label>
+          <button class="button" type="submit">Отправить заявку</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
     </main>
 
     <footer class="footer">
       <p>Email: <a href="mailto:hello@arnex.ru">hello@arnex.ru</a></p>
       <p>Телефон: место для номера</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

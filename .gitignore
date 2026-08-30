@@ -11,3 +11,6 @@ dist/
 .netlify/
 
 .vercel
+.env
+.env.*
+!.env.example
