@@ -1,4 +1,5 @@
 const TELEGRAM_API = "https://api.telegram.org/bot";
+const { callArnexApi } = require("./api-client");
 
 function json(statusCode, body) {
   return {
@@ -68,10 +69,22 @@ exports.handler = async (event) => {
   const message = update.message || update.edited_message;
   const chatId = message?.chat?.id;
   const text = String(message?.text || "").trim();
+  const username = [
+    message?.from?.username ? `@${message.from.username}` : null,
+    [message?.from?.first_name, message?.from?.last_name].filter(Boolean).join(" "),
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   if (!chatId) {
     return json(200, { message: "No chat to reply" });
   }
+
+  await callArnexApi("/bot-messages", {
+    chatId,
+    username,
+    message: text,
+  });
 
   const response = await sendMessage(token, chatId, getReply(text));
 

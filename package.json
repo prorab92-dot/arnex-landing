@@ -1,0 +1,15 @@
+{
+  "name": "arnex-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arnex landing page with Telegram and Railway Postgres leads.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "pg": "^8.16.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

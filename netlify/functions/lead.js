@@ -1,4 +1,5 @@
 const TELEGRAM_API = "https://api.telegram.org/bot";
+const { callArnexApi } = require("./api-client");
 
 function json(statusCode, body) {
   return {
@@ -50,6 +51,13 @@ exports.handler = async (event) => {
   ]
     .filter(Boolean)
     .join("\n");
+
+  await callArnexApi("/leads", {
+    name,
+    phone,
+    message,
+    source: "site",
+  });
 
   const response = await fetch(`${TELEGRAM_API}${token}/sendMessage`, {
     method: "POST",

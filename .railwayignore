@@ -1,0 +1,8 @@
+.git/
+.netlify/
+.vercel/
+arnex-site/
+arnex-site-package.tar.gz
+codex-hook-staging/
+ИМЯ-ПАПКИ/
+node_modules/
